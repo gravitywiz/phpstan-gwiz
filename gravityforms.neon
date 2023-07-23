@@ -1,0 +1,140 @@
+parameters:
+    ignoreErrors:
+      -
+        # gf_apply_filters only specifies two params. It uses func_get_args()
+        message: '#Function gf_apply_filters invoked with \d+ parameters, 2 required.#'
+        reportUnmatched: false
+      -
+        # gf_do_action only specifies one params. It uses func_get_args()
+        message: '#Function gf_do_action invoked with \d+ parameters, 1 required.#'
+        reportUnmatched: false
+    typeAliases:
+      GFForm: '''
+        array<string, mixed> & array{
+          fields: \GF_Field[],
+          button: array{
+            text: string,
+            type: string,
+            imageUrl: string,
+          },
+          title: string,
+          description: string,
+          version: string,
+          id: int,
+          markupVersion?: int,
+          nextFieldId: int,
+          useCurrentUserAsAuthor?: bool,
+          postContentTemplateEnabled?: bool,
+          postTitleTemplateEnabled?: bool,
+          postTitleTemplate?: string,
+          postContentTemplate?: string,
+          lastPageButton: mixed,
+          pagination?: array<string, mixed>,
+          firstPageCssClass?: string,
+          notifications: array<string, array<string, string>>,
+          confirmations: array<string, array<string, string>>,
+          is_active: string,
+          date_created: string,
+          is_trash: string,
+          confirmation: array<string, string>,
+          descriptionPlacement?: string,
+          cssClass?: string,
+        }
+      '''
+      GFFeed: '''
+        array{
+          id: int,
+          form_id: int,
+          meta: array<string, mixed>,
+          is_active: 0|1,
+          addon_slug: string,
+        }
+      '''
+      GFEntry: '''
+        array<string, mixed> & array{
+          id: string,
+          status: string,
+          form_id: string,
+          ip: string,
+          source_url: string,
+          currency: string,
+          post_id?: string|null,
+          date_created: string,
+          date_updated: string,
+          is_starred: int,
+          is_read: int,
+          user_agent: string,
+          payment_status?: string,
+          payment_date?: string,
+          payment_amount?: string,
+          payment_method?: string,
+          transaction_id?: string,
+          is_fulfilled?: string,
+          created_by: string,
+          transaction_type?: string,
+        }
+      '''
+      GFValidationResult: '''
+        array{
+          form: GFForm,
+          is_valid: bool,
+          failed_validation_page: int,
+          errors: mixed,
+        }
+      '''
+      GFSettingsFields: '''
+        array{
+          title: string,
+          fields: array<string, mixed>[],
+        }[]
+      '''
+      GFNotificationT: '''
+        array<string, mixed> & array{
+          id: string,
+          isActive: boolean,
+          to: string,
+          name: string,
+          event: string,
+          toType: string,
+          subject: string,
+          message: string,
+          attachments: mixed,
+        }
+      '''
+      GFNotificationEmail: '''
+        array{
+          to: string,
+          subject: string,
+          message: string,
+          headers: mixed,
+          attachments: mixed,
+          abort_email: boolean,
+        }
+      '''
+      GFProductFields: '''
+        array{
+          products: GFProductFieldsProduct[],
+          shipping: array{
+            id: string,
+            name: string,
+            price: string,
+          },
+        }
+      '''
+      GFProductFieldsProduct: '''
+        array{
+          name: string,
+          price: string,
+          quantity: int|string,
+          options?: GFProductFieldsOption[],
+        }
+      '''
+      GFProductFieldsOption: '''
+        array{
+          id: int|float|string,
+          field_label: string,
+          option_name: string,
+          option_label: string,
+          price: string,
+        }
+      '''

@@ -1,0 +1,13 @@
+parameters:
+    typeAliases:
+      WCCartItem: '''
+        non-empty-array<string, mixed> & array{
+          key: string,
+          data: \WC_Product,
+          data_hash: string,
+          product_id: int,
+          variation_id?: int,
+          variation?: array<string, string>,
+          quantity?: int,
+        }
+      '''

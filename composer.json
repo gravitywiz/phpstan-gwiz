@@ -1,0 +1,15 @@
+{
+  "name": "gravitywiz/phpstan-gwiz",
+  "description": "PHPStan extension for Gravity Forms and WooCommerce. Adds type aliases and various config changes.",
+  "license": [
+    "MIT"
+  ],
+  "extra": {
+    "phpstan": {
+      "includes": [
+        "gravityforms.neon",
+        "woocommerce.neon"
+      ]
+    }
+  }
+}
