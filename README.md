@@ -1,4 +1,4 @@
-# `gravitywiz/phpstan-extension`
+# `gravitywiz/phpstan-gwiz` [![Packagist Version](https://img.shields.io/packagist/v/gravitywiz/phpstan-gwiz)](https://packagist.org/packages/gravitywiz/phpstan-gwiz) 
 
 A PHPStan extension for Gravity Forms and WooCommerce. It adds type aliases for Gravity Forms and WooCommerce.
 Additionally, there are other various config changes to ignore errors, etc.
