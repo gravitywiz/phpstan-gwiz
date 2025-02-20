@@ -1,6 +1,7 @@
 parameters:
     stubFiles:
       - stubs/gravityforms/rgar.stub
+      - stubs/gravityforms/rgars.stub
     ignoreErrors:
       -
         # gf_apply_filters only specifies two params. It uses func_get_args()
