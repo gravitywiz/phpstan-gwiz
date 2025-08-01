@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Gets a specific property within a multidimensional array.
+ *
+ * @since  Unknown
+ * @access public
+ *
+ * @param array $array|\ArrayAccess The array to search in.
+ * @param string|int $name The name of the property to find.
+ * @param mixed $default Optional. Value that should be returned if the property is not set or empty. Defaults to null.
+ *
+ * @return null|string|mixed The value
+ 
+ * @phpstan-ignore-next-line Issues with ArrayAccess
+ */
+function rgars( $array, $name, $default = null ) {}
